@@ -261,7 +261,35 @@ function postForComment(posts, comment) {
 
 postForComment(posts, comment);
 
+//Example 1
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
 
+var admin = users.find(function(user){
+    return user.admin === true;
+});
 
+//Example 2
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
+
+var account = accounts.find(function(account){
+    return account.balance === 12;
+});
+
+//Example 3
+
+function findWhere(array, criteria) {
+  return array.find(function(arr){
+      var critKey = Object.keys(criteria);
+      return arr[critKey] === criteria[critKey];
+  });
+}
 
 ////////////////////////////////////////////////////////////////////////////////
