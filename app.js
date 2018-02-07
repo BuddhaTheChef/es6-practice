@@ -120,6 +120,42 @@ function pluck(array, property) {
     })
     return colors
 }
+////////////////////////////////////////////////////////////////////////////////
+//                            Filter Method
+
+var products = [
+  {name:'cucumber', type: 'vegtable',quantity: 0, price: 1},
+  {name:'banana', type: 'fruit',quantity: 10, price: 15},
+  {name:'celery', type: 'vegtable',quantity: 10, price: 9},
+  {name:'orange', type: 'fruit',quantity: 3, price: 5},
+];
+
+var filteredProducts = [];
+
+for (var i = 0; i < products.length; i++) {
+  if(products[i].type === 'fruit') {
+    filteredProducts.push(products[i]);
+  }
+}
+
+filteredProducts;
+
+products.filter(function(product) {
+  return product.type === 'vegtable';
+});
+
+
+//Type is 'vegtable', quantity is greater than 0, price is less than 10
+
+products.filter(function(product) {
+  return product.type === 'vegtable'
+    && product.quantity > 0
+    && product.price < 10
+});
+
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
