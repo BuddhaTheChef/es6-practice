@@ -293,3 +293,56 @@ function findWhere(array, criteria) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+//                    Every and Some method helpers
+
+var computers = [
+  { name: 'Apple', ram: 24 },
+  { name: 'Compaq', ram: 4 },
+  { name: 'Acer', ram: 32 },
+];
+
+var allComputersCanRun = true;
+var onlySomeCanRun = false;
+
+for (var i = 0; i < computers.length; i++) {
+  var computer = computers[i];
+
+  if(computer.ram < 16) {
+    allComputersCanRun = false;
+  }
+  else {
+    onlySomeCanRun = true;
+  }
+}
+"---"
+allComputersCanRun;
+onlySomeCanRun;
+
+"+++"
+
+computers.every(function(computer) {
+  return computer.ram > 16;
+});
+
+computers.some(function(computer) {
+  return computer.ram > 16;
+});
+
+"---"
+
+var names = [
+	"Alexandria",
+  "Matthew",
+  "Joe"
+];
+
+names.every(function(name) {
+  return name.length > 4;
+})
+
+names.some(function(name) {
+  return name.length > 4;
+})
+
+
+////////////////////////////////////////////////////////////////////////////////
