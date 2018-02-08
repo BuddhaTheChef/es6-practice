@@ -344,5 +344,56 @@ names.some(function(name) {
   return name.length > 4;
 })
 
+////////////////////////////////////////////////
+
+function Field(value) {
+  this.value = value;
+}
+
+Field.prototype.validate = function() {
+  return this.value.length > 0;
+}
+
+var username = new Field("2cool");
+var password = new Field("my_password");
+var birthdate = new Field("10/10/2010");
+
+
+var fields = [username, password, birthdate];
+
+var formIsValid = fields.every(function(field) {
+  return field.validate();
+})
+
+username.validate()
+
+//Example 1
+var users = [
+  { id: 21, hasSubmitted: true },
+  { id: 62, hasSubmitted: false },
+  { id: 4, hasSubmitted: true }
+];
+
+var hasSubmitted = users.every(function(user){
+    return user.hasSubmitted;
+});
+
+//Example 2
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some(function(request){
+    return request.status === 'pending';
+});
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                          Reduce helper method
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
