@@ -514,3 +514,24 @@ for (var i = 0; i < statuses.length; i++) {
     message = statuses[i].response;
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+//                            Template strings
+const device_id = 4;
+const guid = 20;
+const username = 'HELLO';
+
+const data = `{"device_id":"${device_id}","guild":"${guid}","username":"${username}","}`;
+
+data;
+
+
+const year = 2016;
+const yearMessage = `The year is ${year}`;
+
+yearMessage;
+
+//Example 1
+
+
+////////////////////////////////////////////////////////////////////////////////
