@@ -477,5 +477,25 @@ function unique(array) {
     }, []);
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
+//                          const and let
+
+//var name = 'Aj';
+
+//var title = 'Software Engineer';
+
+//var hourlyWage = 40;
+
+//ES6
+
+const name = 'Aj';
+let title = 'Software Engineer';
+let hourlyWage = 40;
+
+title = 'Senior Software Developer';
+hourlyWage = 45;
+
+//Example 1
+const name = 'Aj';
+let age  = 21;
+const dateOfBirth ='06/25/96';
