@@ -532,6 +532,15 @@ const yearMessage = `The year is ${year}`;
 yearMessage;
 
 //Example 1
+function doubleMessage(number) {
+    const doubled = number * 2;
+  return `Your number doubled is ${doubled}`;
+}
+
+//Example 2
+function fullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
