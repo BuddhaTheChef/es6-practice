@@ -598,9 +598,73 @@ const profile = {
 ////////////////////////////////////////////////////////////////////////////////
 //                       Enhanced object literals
 
+function createBookShop(inventory){
+  return {
+  //inventory: inventory,
+    inventory,
+  //inventoryValue: function
+    inventoryValue() {
+    return this.inventory.reduce((total, book) => total + book.price, 0);
+  },
+    priceForTitle(title) {
+      return this.inventory.find(book => book.title === title).price;
+    }
+  }
+}
 
+const inventory = [
+  {title: 'Harry Potter', price: 10 },
+  {title: 'Eloquent Javscript', price: 15 }
+  ];
 
+const bookShop = createBookShop(inventory);
 
+bookShop.inventoryValue();
+bookShop.priceForTitle('Harry Potter');
+
+function saveFile() {
+//$.ajax({method: 'POST', url, data });
+  $.ajax({method: 'POST', url: url, data: data });
+
+}
+
+const url = 'http://ajwietecha.com';
+const data = {color: 'red');
+
+saveFile(url, data);
+
+//Example 1
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { red, blue };
+
+//Example 2
+const fields = ['firstName', 'lastName', 'phoneNumber'];
+
+const props = { fields };
+
+//Example 3
+const canvasDimensions = function(width, initialHeight) {
+  const height = initialHeight * 9 /16;
+  return {
+     width,
+     height
+  };
+}
+
+//example 4
+const color = 'red';
+
+const Car = {
+  color,
+  drive: function() {
+    return 'Vroom!';
+  },
+  getColor: function() {
+    return this.color;
+  }
+};
 
 
 ////////////////////////////////////////////////////////////////////////////////
