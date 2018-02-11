@@ -579,6 +579,20 @@ members: ['Jane', 'Bill'],
 
 team.teamSummary();
 
+//Example 1
+const fibonacci = (n) => {
+  if (n < 3) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+//Example 2
+const profile = {
+    name: 'Alex',
+    getName: () => {
+        return profile.name;
+    }
+};
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
