@@ -544,3 +544,41 @@ function fullName(firstName, lastName) {
 
 
 ////////////////////////////////////////////////////////////////////////////////
+//                           Arrow functions
+
+const add = function(a,b) {
+	return a + b;
+}
+add(1,2)
+
+const sub = (a,b) => {
+	return b - a;
+}
+sub(1,2)
+
+const mult = (a,b) => a * b;
+mult(1,2)
+
+const div = a => a / 2;
+div(4)
+
+const numbers = [1,2,3];
+
+numbers.map(number => 2 * number);
+
+
+const team = {
+members: ['Jane', 'Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function() {
+  	return this.members.map((member) => {
+  		return  `${member} is on team ${this.teamName}`;
+		});
+	}
+};
+
+team.teamSummary();
+
+
+
+////////////////////////////////////////////////////////////////////////////////
