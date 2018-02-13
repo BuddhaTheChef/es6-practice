@@ -761,9 +761,20 @@ const MathLibrary = {
 };
 
 //Example 1
+function product(...numbers) {
+  return numbers.reduce(function(acc, number) {
+    return acc * number;
+  }, 1)
+}
 
 //Example 2
+function join(array1, array2) {
+  return [...array1, ...array2];
+}
 
 //Example 3
+function unshift(array, ...letters) {
+  return [...letters, ...array ];
+}
 
 ////////////////////////////////////////////////////////////////////////////////
