@@ -778,3 +778,58 @@ function unshift(array, ...letters) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+//                              Destructruing
+
+var expense = {
+  type: 'Business',
+  amount: '$45 USD'
+};
+
+//var type = expense.type;
+//var amount = expense.amount;
+
+//ES6
+const { type, amount} = expense;
+type;
+amount;
+
+var savedFiled = {
+  extension: '.jpg',
+  name: 'repost',
+  size: 14040
+};
+
+function fileSummary({name, extension, size}) {
+  return `The file ${name}${extension} is of size ${size}`
+}
+
+fileSummary(savedFiled);
+
+const companies = [
+  'Google',
+  'Facebook',
+  'Uber'
+];
+
+const [ name, name2, name3] = companies;
+name;
+name2;
+name3;
+
+const companies = [
+  {name: 'Google', location: 'Mountain View'},
+  {name: 'Facebook', location: 'Menlo Park'},
+  {name: 'Uber', location: 'San Franxisco'}
+];
+
+//const [{location}] = companies;
+//location;
+
+const Google = {
+  locations: ['Mountain View','New York', 'London']
+};
+
+const {locations: [ location ]} = Google;
+location
+
+////////////////////////////////////////////////////////////////////////////////
