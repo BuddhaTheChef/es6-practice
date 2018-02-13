@@ -698,7 +698,18 @@ function createAdminUser(user = new User(generateId())) {
 createAdminUser();
 const user = new User(generateId());
 
+//Example 1
+function sum(a = 0, b = 0) {
 
+  return a + b;
+}
 
+//Example 2
+function addOffset(style = {}) {
+
+  style.offset = '10px';
+
+  return style;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
