@@ -859,9 +859,36 @@ points.map(([x,y]) => {
 });
 
 //Example 1
+const profile = {
+  title: 'Engineer',
+  department: 'Engineering'
+};
+
+function isEngineer(profile) {
+ const {title, department} = profile;
+  return title === 'Engineer' && department === 'Engineering';
+}
 
 //Example 2
+const classes = [
+  [ 'Chemistry', '9AM', 'Mr. Darnick' ],
+  [ 'Physics', '10:15AM', 'Mrs. Lithun'],
+  [ 'Math', '11:30AM', 'Mrs. Vitalis' ]
+];
+
+const classesAsObject = classes.map(([subject, time, teacher]) => {
+    return {subject, time, teacher};
+});
 
 //Example 3
+const numbers = [1, 2, 3];
+
+function double([num, ...rest]) {
+ if (!num) { return []; }
+
+ return [num * 2, ...double(rest) ];
+}
+
+double(numbers);
 
 ////////////////////////////////////////////////////////////////////////////////
