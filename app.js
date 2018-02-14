@@ -986,6 +986,29 @@ class MyComponent extends Component {
 }
 
 //Example 1
+class Monster {
+  constructor(options){
+      this.name = options.name;
+      this.health = 100;
+  }
+}
+const dragon = new Monster({name: 'Dragon'});
+dragon;
+dragon.name;
+dragon.health;
 
+//Example 2
+class Monster {
+  constructor(options) {
+    this.health = 100;
+    this.name = options.name;
+  }
+}
+
+class Snake extends Monster {
+  bite(snake) {
+      snake.health -= 10;
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
