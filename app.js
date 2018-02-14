@@ -892,3 +892,100 @@ function double([num, ...rest]) {
 double(numbers);
 
 ////////////////////////////////////////////////////////////////////////////////
+//                        Prototypal inheritance
+
+//ES5 way//////////////////////////////////
+function Car(options) {
+  this.title = options.title;
+}
+
+Car.prototype.drive = function() {
+  return 'VROOOOOOM!!';
+}
+
+function Toyota(options) {
+  Car.call(this,options);
+  this.color = options.color;
+}
+
+Toyota.prototype = Object.create(Car.prototype);
+Toyota.prototype.constructoe = Toyota;
+
+Toyota.prototype.honk = function() {
+  return 'beep';
+}
+
+
+const car = new Car({title: 'Focus'});
+car.drive();
+car;
+
+
+const toyota = new Toyota({color: 'red', title: 'Daily Driver'});
+toyota;
+toyota.drive();
+toyota.honk();
+
+
+
+//ES6 WAY///////////////////////////
+class Car {
+  constructor({title}) {
+    this.title = title;
+  }
+  drive() {
+    return 'VROOM!';
+  }
+
+}
+
+class Toyota extends Car {
+  constructor(options) {
+    super(options);
+    this.color = options.color;
+  }
+
+  honk() {
+    return 'beep';
+  }
+}
+
+const toyota = new Toyota({color: 'red', title: 'Daily Driver'});
+
+const car = new Car({title: 'Toyota'});
+car;
+car.drive();
+
+"---------"
+toyota.honk();
+toyota.drive();
+toyota;
+
+//Way react used to be set up
+React.createClass({
+
+  doSomething() {
+
+  },
+  doSomethingElse() {
+
+  }
+
+});
+
+//Example of Class
+
+class MyComponent extends Component {
+  doSomething() {
+
+  },
+  doSomethingElse() {
+
+  }
+
+}
+
+//Example 1
+
+
+////////////////////////////////////////////////////////////////////////////////
