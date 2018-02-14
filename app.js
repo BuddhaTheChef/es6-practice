@@ -830,6 +830,38 @@ const Google = {
 };
 
 const {locations: [ location ]} = Google;
-location
+location;
+
+function signup({username, password, email, dob, city}) {
+  //create new user
+
+}
+
+const user = {
+  username: 'myname',
+  password: 'mypassword',
+  email: 'email@yahoo.com',
+  dob: '1/2/3210',
+  city: 'Hawaii'
+};
+
+signup(user);
+
+const points = [
+  [4,5],
+  [10,1],
+  [0,40],
+  [4,4],
+];
+
+points.map(([x,y]) => {
+  return { x, y };
+});
+
+//Example 1
+
+//Example 2
+
+//Example 3
 
 ////////////////////////////////////////////////////////////////////////////////
