@@ -1010,5 +1010,47 @@ class Snake extends Monster {
       snake.health -= 10;
   }
 }
+////////////////////////////////////////////////////////////////////////////////
+//                             for - let
+
+const colors = ['red', 'green', 'blue'];
+
+for (let color of colors) {
+	console.log(color);
+}
+
+//output: red, green, blue;
+
+const numbers = [1,2,3,4];
+let total = 0;
+for (let number of numbers) {
+  total += number
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//                                Generators?
+// - function that can be entered and exited multiple times
+
+function* shopping() {
+  //stuff on sidewalk
+
+  //walking down sidewalk
+
+  //go into the store with cash
+  const stuffFromStore = yield 'cash';
+
+  //walking back home
+  return stuffFromStore
+}
+
+//stuff in the store
+const gen = shopping();
+gen.next(); //leave our house
+//walked into store
+//walking through store
+//purchase our stuff
+gen.next('grocieries');  // leaving store with groceries
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
