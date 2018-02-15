@@ -1091,7 +1091,39 @@ myColors;
 3
 ["red","blue","green"]
 
+const testingTeam = {
+	lead: 'Amanda',
+  tester: 'Bill',
+  //looks for key to tell for of loop how to iterate over an object
+  [Symbol.iterator]: function* () {
+    yield this.lead;
+    yield this.tester;
+  }
+};
 
+const engineeringTeam = {
+  testingTeam,
+	size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Dave',
+  [Symbol.iterator]: function* () {
+    yield this.lead;
+    yield this.manager;
+    yield this.engineer;
+    //yield* tells for of loop to check if it can walk through whole generator function in a generator function
+    yield* this.testingTeam;
+  }
+};
+
+
+
+const names = [];
+for(let name of engineeringTeam) {
+  names.push(name);
+}
+names;
 
 
 
