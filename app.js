@@ -1039,8 +1039,10 @@ function* shopping() {
   //go into the store with cash
   const stuffFromStore = yield 'cash';
 
+  const cleanClothes = yield 'laundry';
+
   //walking back home
-  return stuffFromStore
+  return [stuffFromStore, cleanClothes]
 }
 
 //stuff in the store
@@ -1050,6 +1052,46 @@ gen.next(); //leave our house
 //walking through store
 //purchase our stuff
 gen.next('grocieries');  // leaving store with groceries
+gen.next('clean clothes');
+
+//Output :
+{"value":"cash","done":false}
+{"value":"laundry","done":false}
+{"value":["grocieries","clean clothes"],"done":true}
+
+
+function* colors() {
+  yield 'red';
+  yield 'blue';
+  yield 'green';
+}
+
+
+const gen = colors();
+gen.next();
+gen.next();
+gen.next();
+gen.next();
+
+const myColors = [];
+
+for (let color of colors()) {
+  myColors.push(color);
+}
+
+myColors;
+
+//Output:
+
+{"value":"red","done":false}
+{"value":"blue","done":false}
+{"value":"green","done":false}
+{"done":true}
+{"done":true}
+3
+["red","blue","green"]
+
+
 
 
 
