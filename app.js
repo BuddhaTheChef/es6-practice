@@ -1158,6 +1158,26 @@ values;
 4
 ["Great post!","good comment","bad comment","meh comment"]
 
+////////////////////////////////////////////////////////////////////////////////
+//                                Promises
+
+ promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve();
+  },3000)
+});
+
+promise.then(() => {
+  console.log('finally finished!');
+}).then(() => {
+  console.log('Me too!!');
+}).catch(() => {
+  console.log('BOOOOOooo!!');
+})
+
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
